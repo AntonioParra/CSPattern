@@ -5,9 +5,6 @@ sap.ui.define([
   "use strict";
 
   return BaseController.extend("com.gjahr.CSPattern.controller.Main", {
-    sayHello: function() {
-      MessageBox.show("Hello World!");
-    }
   });
 
 });

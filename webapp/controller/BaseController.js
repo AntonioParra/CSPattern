@@ -1,8 +1,9 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/core/UIComponent",
-  "sap/ui/core/routing/History"
-], function (Controller, UIComponent, History) {
+  "sap/ui/core/routing/History",
+  "sap/ui/model/json/JSONModel"
+], function (Controller, UIComponent, History, JSONModel) {
   "use strict";
 
   return Controller.extend("com.gjahr.CSPattern.controller.BaseController", {
@@ -22,6 +23,9 @@ sap.ui.define([
     setModel: function(oModel, sName) {
       this.getView().setModel(oModel, sName);
       return this;
+    },
+    setJSONModel: function(oData, sName) {
+      return this.setModel(new JSONModel(oData), sName);
     },
     navTo: function(sName, oParameters, bReplace) {
       this.getRouter().navTo(sName, oParameters, undefined, bReplace);
